@@ -1,7 +1,19 @@
 # Nat Store - A Medusa test
 
-## A simple storefront integrated using `medusa-react`
+### A simple storefront integrated using `medusa-react`
 
+---
+## How to use it
+
+Clone the repository then run into your terminal
+
+```yarn install && yarn dev```
+
+> You should have the medusa server running into your computer and have set the `STORE_CORS="http://localhost:3000"`
+
+---
+
+## Answers
 #### Time spent: 
 Something around 5/6 hours
 
