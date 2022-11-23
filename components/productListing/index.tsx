@@ -1,16 +1,16 @@
 import ProductCard from "../productCard";
+import { useProducts } from "medusa-react";
 
 const ProductListing = ({}) => {
-  const productData = {
-    title: "Test Product",
-    url: "#",
-    image: { url: "https://via.placeholder.com/300x300.png" },
-    price: 2889,
-  };
+  const { products, isLoading } = useProducts();
 
-  return (
+  return isLoading ? (
+    "..."
+  ) : (
     <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mx-auto p-6 w-full">
-      <ProductCard product={productData} />
+      {products?.map((product) => (
+        <ProductCard product={product} />
+      ))}
     </section>
   );
 };
