@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header className="flex p-3 mx-auto items-center justify-between shadow">
@@ -9,7 +11,7 @@ const Header = () => {
         </svg>
       </button>
 
-      <div className="justify-self-center">
+      <Link href="/" className="justify-self-center">
         <svg
           width="100"
           height="35"
@@ -46,7 +48,7 @@ const Header = () => {
             fill="#7C3AED"
           />
         </svg>
-      </div>
+      </Link>
 
       <div></div>
     </header>

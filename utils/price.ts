@@ -1,5 +1,11 @@
-export const priceFormat = (prices: object) => {
-  const price = prices.filter((price) => price.currency_code === "usd");
+import { formatVariantPrice } from "medusa-react";
+import type { Cart } from "medusa-react/dist/types";
+import type { ProductVariant } from "@medusajs/medusa";
 
-  return `$ ${(price[0].amount / 100).toFixed(2)}`;
+export const formatPrice = (variant: ProductVariant, cart: Cart) => {
+  if (cart)
+    return formatVariantPrice({
+      variant: variant,
+      region: { currency_code: "usd", tax_code: "$", tax_rate: 0 },
+    });
 };
