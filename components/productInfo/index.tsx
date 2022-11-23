@@ -1,13 +1,12 @@
 import Button from "../button";
 import { formatPrice } from "../../utils/price";
 import { useCart, useCreateLineItem } from "medusa-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ProductOptions from "../productOptions";
 
 const ProductInfo = ({ product, ...other }) => {
   const { title, variants, description } = product;
   const [options, setOptions] = useState({});
-  const [selectedVariant, setSelectedVariant] = useState("");
   const { cart } = useCart();
   const { mutate } = useCreateLineItem(cart?.id!);
 
@@ -27,16 +26,6 @@ const ProductInfo = ({ product, ...other }) => {
       }
     );
   };
-
-  useEffect(() => {
-    console.log(options);
-    Object.keys(options).map((option) => {
-      console.log(option);
-      console.log(
-        product.variants.filter((variant) => variant.value === option)
-      );
-    });
-  }, [options]);
 
   return (
     <div {...other}>
