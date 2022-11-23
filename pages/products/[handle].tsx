@@ -31,13 +31,12 @@ const ProductPage: NextPage = () => {
       <main className="flex min-h-screen min-w-screen flex-col items-center justify-centermin-w-screen">
         <div className="flex flex-row min-w-full">
           <ProductGallery
-            className="flex flex-col w-full basis-1/2"
+            className="flex flex-col w-full basis-1/2 bg-gray-300"
             gallery={product.images}
           />
           <ProductInfo
-            className="flex flex-col w-full basis-1/2"
+            className="flex flex-col w-full basis-1/2 px-40 py-20"
             product={product}
-            cart={cart}
           />
         </div>
       </main>

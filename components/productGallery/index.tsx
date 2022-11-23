@@ -5,12 +5,9 @@ const ProductGallery = ({ gallery, ...other }) => {
     <>
       <div {...other}>
         {gallery.map((image) => (
-          <div
-            key={image.id}
-            className="relative w-full min-w-[500px] min-h-[500px]"
-          >
+          <div key={image.id} className="relative w-full min-h-screen">
             <Image
-              className="object-contain"
+              className="object-cover"
               fill
               sizes="(max-width: 768px) 50vw,
           25vw"
