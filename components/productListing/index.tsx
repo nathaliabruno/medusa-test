@@ -1,7 +1,7 @@
 import ProductCard from "../productCard";
 import { useProducts } from "medusa-react";
 
-const ProductListing = ({}) => {
+const ProductListing = () => {
   const { products, isLoading } = useProducts();
 
   return isLoading ? (
