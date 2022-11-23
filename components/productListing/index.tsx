@@ -2,8 +2,10 @@ import ProductCard from "../productCard";
 import { useProducts } from "medusa-react";
 import Spinner from "../spinner";
 
-const ProductListing = () => {
-  const { products, isLoading } = useProducts();
+const ProductListing = ({ params }) => {
+  const { products, isLoading } = useProducts({
+    collection_id: params.collection_id,
+  });
 
   return isLoading ? (
     <Spinner />
