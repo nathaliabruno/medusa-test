@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { useProducts } from "medusa-react";
 import { useCreateLineItem, useCart } from "medusa-react";
 import Spinner from "../../components/spinner";
+import ProductGallery from "../../components/productGallery";
+import ProductInfo from "../../components/productInfo";
 
 const ProductPage: NextPage = () => {
   const { query } = useRouter();
@@ -24,9 +26,21 @@ const ProductPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{/*product.title*/} | Nat Medusa Store</title>
+        <title>{product.title} | Nat Medusa Store</title>
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-centermin-w-screen"></main>
+      <main className="flex min-h-screen min-w-screen flex-col items-center justify-centermin-w-screen">
+        <div className="flex flex-row min-w-full">
+          <ProductGallery
+            className="flex flex-col w-full basis-1/2"
+            gallery={product.images}
+          />
+          <ProductInfo
+            className="flex flex-col w-full basis-1/2"
+            product={product}
+            cart={cart}
+          />
+        </div>
+      </main>
     </>
   );
 };;;
